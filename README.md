@@ -29,6 +29,9 @@ para `http://localhost:8080/api/h2-console` em seu navegador. Use as configuraç
 ![img.png](img.png)
 
 
+### Postman para testes: 
+    
+
 
 
 

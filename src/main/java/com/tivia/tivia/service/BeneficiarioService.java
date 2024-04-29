@@ -5,6 +5,7 @@ import com.tivia.tivia.repository.BeneficiarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,7 @@ public class BeneficiarioService {
                     existingBeneficiario.setNome(beneficiario.getNome());
                     existingBeneficiario.setTelefone(beneficiario.getTelefone());
                     existingBeneficiario.setDataNascimento(beneficiario.getDataNascimento());
+                    existingBeneficiario.setDataAtualizacao(new Date());
                     return beneficiarioRepository.save(existingBeneficiario);
                 });
     }

@@ -5,6 +5,7 @@ import com.tivia.tivia.repository.DocumentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,7 @@ public class DocumentoService {
                 .map(existingDocumento -> {
                     existingDocumento.setTipoDocumento(documento.getTipoDocumento());
                     existingDocumento.setDescricao(documento.getDescricao());
+                    existingDocumento.setDataAtualizacao(new Date());
                     return documentoRepository.save(existingDocumento);
                 });
     }
