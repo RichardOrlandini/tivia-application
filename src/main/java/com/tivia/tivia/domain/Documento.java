@@ -1,5 +1,6 @@
 package com.tivia.tivia.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,10 +15,11 @@ public class Documento extends DomainEntity {
     private String tipoDocumento;
 
     @Column
-    @Lob // Usado para textos longos
+    @Lob
     private String descricao;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "beneficiario_id", nullable = false)
+    @JsonBackReference
     private Beneficiario beneficiario;
 }

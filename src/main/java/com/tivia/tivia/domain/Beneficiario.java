@@ -1,6 +1,7 @@
 package com.tivia.tivia.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Beneficiario extends DomainEntity {
     private Date dataNascimento;
 
     @OneToMany(mappedBy = "beneficiario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Set<Documento> documentos = new HashSet<>();
 
 }
