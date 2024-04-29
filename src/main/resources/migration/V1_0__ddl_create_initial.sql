@@ -1,7 +1,8 @@
 CREATE SEQUENCE hibernate_sequence START 1 INCREMENT 1;
 
+-- Criação da tabela Beneficiario com a coluna id como PRIMARY KEY
 CREATE TABLE beneficiario (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     telefone VARCHAR(255),
     data_nascimento DATE NOT NULL,
@@ -9,8 +10,9 @@ CREATE TABLE beneficiario (
     data_atualizacao TIMESTAMP
 );
 
+-- Criação da tabela Documento com uma FOREIGN KEY que referencia a tabela Beneficiario
 CREATE TABLE documento (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     tipo_documento VARCHAR(50) NOT NULL,
     descricao TEXT,
     data_inclusao TIMESTAMP,
